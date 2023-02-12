@@ -1,0 +1,1132 @@
+% File Titled "app2"
+
+classdef app2 < matlab.apps.AppBase
+
+    % Properties that correspond to app components
+    properties (Access = public)
+        UIFigure                   matlab.ui.Figure
+        EditField_15               matlab.ui.control.NumericEditField
+        EditField_15Label          matlab.ui.control.Label
+        GoalSettingLabel           matlab.ui.control.Label
+        Image8_2                   matlab.ui.control.Image
+        Panel                      matlab.ui.container.Panel
+        CreatemyactionplanButton   matlab.ui.control.Button
+        IwilldothisbycuttingdownonLabel  matlab.ui.control.Label
+        PercentLabel               matlab.ui.control.Label
+        percentField               matlab.ui.control.NumericEditField
+        reduceWaterUseLabel        matlab.ui.control.Label
+        HandwashingDishesCheckBox  matlab.ui.control.CheckBox
+        DishwasherCheckBox_2       matlab.ui.control.CheckBox
+        WashingMachineCheckBox_2   matlab.ui.control.CheckBox
+        FlushingCheckBox           matlab.ui.control.CheckBox
+        HygieneCheckBox_2          matlab.ui.control.CheckBox
+        BathCheckBox               matlab.ui.control.CheckBox
+        ShowerCheckBox             matlab.ui.control.CheckBox
+        ActionPlanLabel            matlab.ui.control.Label
+        Image8                     matlab.ui.control.Image
+        ActionPlanPanel            matlab.ui.container.Panel
+        MinutesDayLabel_5          matlab.ui.control.Label
+        EditField_14               matlab.ui.control.NumericEditField
+        RecommendedLabel_7         matlab.ui.control.Label
+        MinutesDayLabel_4          matlab.ui.control.Label
+        EditField_13               matlab.ui.control.NumericEditField
+        RecommendedLabel_6         matlab.ui.control.Label
+        MinutesDayLabel_3          matlab.ui.control.Label
+        EditField_12               matlab.ui.control.NumericEditField
+        RecommendedLabel_5         matlab.ui.control.Label
+        TimesDayLabel              matlab.ui.control.Label
+        EditField_11               matlab.ui.control.NumericEditField
+        RecommendedLabel_4         matlab.ui.control.Label
+        MinutesDayLabel_2          matlab.ui.control.Label
+        EditField_10               matlab.ui.control.NumericEditField
+        RecommendedLabel_3         matlab.ui.control.Label
+        MinutesWeekLabel           matlab.ui.control.Label
+        EditField_9                matlab.ui.control.NumericEditField
+        RecommendedLabel_2         matlab.ui.control.Label
+        MinutesDayLabel            matlab.ui.control.Label
+        EditField_8                matlab.ui.control.NumericEditField
+        RecommendedLabel           matlab.ui.control.Label
+        BathLabel                  matlab.ui.control.Label
+        HandwashingDishesLabel     matlab.ui.control.Label
+        DishwasherLabel            matlab.ui.control.Label
+        WashingMachineLabel        matlab.ui.control.Label
+        FlushingLabel              matlab.ui.control.Label
+        HygieneLabel               matlab.ui.control.Label
+        ShowerLabel                matlab.ui.control.Label
+        showerGoalText_7           matlab.ui.control.TextArea
+        showerGoalText_6           matlab.ui.control.TextArea
+        showerGoalText_5           matlab.ui.control.TextArea
+        showerGoalText_4           matlab.ui.control.TextArea
+        showerGoalText_3           matlab.ui.control.TextArea
+        showerGoalText_2           matlab.ui.control.TextArea
+        showerGoalText             matlab.ui.control.TextArea
+        Lamp_6                     matlab.ui.control.Lamp
+        Lamp_5                     matlab.ui.control.Lamp
+        Lamp_4                     matlab.ui.control.Lamp
+        Lamp_3                     matlab.ui.control.Lamp
+        Lamp_2                     matlab.ui.control.Lamp
+        Lamp                       matlab.ui.control.Lamp
+        PerDayLabel                matlab.ui.control.Label
+        TryinputtingvaluestogetresultsLabel  matlab.ui.control.Label
+        CalculateButton            matlab.ui.control.Button
+        GalPerWeekEditField        matlab.ui.control.NumericEditField
+        GalPerWeekEditFieldLabel   matlab.ui.control.Label
+        TotalWaterUsedLabel        matlab.ui.control.Label
+        MinutesLabel_4             matlab.ui.control.Label
+        EditField_7                matlab.ui.control.NumericEditField
+        PerWeekLabel               matlab.ui.control.Label
+        BrushingTeethWashingHandsetcLabel  matlab.ui.control.Label
+        LoadsLabel_2               matlab.ui.control.Label
+        LoadsLabel                 matlab.ui.control.Label
+        TimesLabel_2               matlab.ui.control.Label
+        MinutesLabel_3             matlab.ui.control.Label
+        TimesLabel                 matlab.ui.control.Label
+        Label2                     matlab.ui.control.Label
+        Label                      matlab.ui.control.Label
+        DishwasherCheckBox         matlab.ui.control.CheckBox
+        WashingMachineCheckBox     matlab.ui.control.CheckBox
+        FlushingToiletCheckBox     matlab.ui.control.CheckBox
+        HygieneCheckBox            matlab.ui.control.CheckBox
+        RunningaBathCheckBox       matlab.ui.control.CheckBox
+        TakingaShowerCheckBox      matlab.ui.control.CheckBox
+        EditField_6                matlab.ui.control.NumericEditField
+        EditField_5                matlab.ui.control.NumericEditField
+        EditField_4                matlab.ui.control.NumericEditField
+        EditField_3                matlab.ui.control.NumericEditField
+        EditField_2                matlab.ui.control.NumericEditField
+        Image                      matlab.ui.control.Image
+        MyWaterUsageLabel          matlab.ui.control.Label
+        UIAxes                     matlab.ui.control.UIAxes
+    end
+
+    
+    %properties (Access = public)
+        %perWeekTot = app2.PerWeekEditField.Value; % Description
+    %end
+    
+
+    % Callbacks that handle component events
+    methods (Access = private)
+
+        % Value changed function: TakingaShowerCheckBox
+        function BoxOneChecked(app, event)
+            value = app.TakingaShowerCheckBox.Value;
+            app.EditField_7.Visible = 'on';
+            app.MinutesLabel_4.Visible = 'on';
+            if value == 0
+               app.EditField_7.Visible = 'off';
+               app.MinutesLabel_4.Visible = 'off';
+            end
+        end
+
+        % Value changed function: RunningaBathCheckBox
+        function BoxTwoChecked(app, event)
+            value = app.RunningaBathCheckBox.Value;
+            app.EditField_2.Visible = 'on';
+            app.TimesLabel.Visible = 'on';
+            if value == 0
+                app.EditField_2.Visible = 'off';
+                app.TimesLabel.Visible = 'off'; 
+            end
+        end
+
+        % Value changed function: FlushingToiletCheckBox
+        function BoxThreeChecked(app, event)
+            value = app.FlushingToiletCheckBox.Value;
+            app.EditField_4.Visible = 'on';
+            app.TimesLabel_2.Visible = 'on';
+            if value == 0
+                app.EditField_4.Visible = 'off';
+                app.TimesLabel_2.Visible = 'off';
+            end
+        end
+
+        % Value changed function: WashingMachineCheckBox
+        function BoxFourChecked(app, event)
+            value = app.WashingMachineCheckBox.Value;
+            app.EditField_5.Visible = 'on';
+            app.LoadsLabel.Visible = 'on';
+            if value == 0
+                app.EditField_5.Visible = 'off';
+                app.LoadsLabel.Visible = 'off';
+            end
+        end
+
+        % Value changed function: DishwasherCheckBox
+        function BoxFiveChecked(app, event)
+            value = app.DishwasherCheckBox.Value;
+            app.EditField_6.Visible = 'on';
+            app.LoadsLabel_2.Visible = 'on';
+            if value == 0
+                app.EditField_6.Visible = 'off';
+                app.LoadsLabel_2.Visible = 'off';
+            end
+        end
+
+        % Value changed function: HygieneCheckBox
+        function BoxSixChecked(app, event)
+            value = app.HygieneCheckBox.Value;
+            app.EditField_3.Visible = 'on';
+            app.MinutesLabel_3.Visible = 'on';
+            if value == 0
+                app.EditField_3.Visible = 'off';
+                app.MinutesLabel_3.Visible = 'off';
+            end
+        end
+
+        % Button pushed function: CalculateButton
+        function Calculate(app, event)
+            showerMin = app.EditField_7.Value;
+            bath = app.EditField_2.Value;
+            toilet = app.EditField_4.Value;
+            wMachine = app.EditField_5.Value;
+            dWasher = app.EditField_6.Value;
+            hyg = app.EditField_3.Value;
+            
+            if app.TakingaShowerCheckBox.Value ~= 0
+                showerTotal = 7*2*showerMin;
+                if showerTotal <= 105
+                    app.Lamp.Color = [0.00 1.00 0.00];
+                elseif showerTotal <= 175
+                    app.Lamp.Color = [0.75 1.00 0.05];
+                elseif showerTotal <= 245
+                    app.Lamp.Color = [0.95 1.00 0.05];
+                elseif showerTotal <= 315
+                    app.Lamp.Color = [1.00 0.75 0.05];
+                else
+                    app.Lamp.Color = [1.00 0.00 0.00];
+                end
+            else
+                showerTotal = 0;
+            end
+            
+            if app.RunningaBathCheckBox.Value ~= 0
+                bathTotal = 36*bath;
+                if bath <= 3
+                    app.Lamp_4.Color = [0.00 1.00 0.00];
+                elseif bath <= 6
+                    app.Lamp_4.Color = [0.75 1.00 0.05];
+                elseif bath <= 9
+                    app.Lamp_4.Color = [0.95 1.00 0.05];
+                elseif bath <= 12
+                    app.Lamp_4.Color = [1.00 0.75 0.05];
+                else
+                    app.Lamp_4.Color = [1.00 0.00 0.00];
+                end
+            else 
+                bathTotal = 0;
+            end
+            
+            if app.FlushingToiletCheckBox.Value ~= 0
+                toiletTotal = 7*3*toilet;
+                if toilet <= 7
+                    app.Lamp_2.Color = [0.00 1.00 0.00];
+                elseif toilet <= 10
+                    app.Lamp_2.Color = [0.75 1.00 0.05];
+                elseif toilet <= 13
+                    app.Lamp_2.Color = [0.95 1.00 0.05];
+                elseif toilet <= 16
+                    app.Lamp_2.Color = [1.00 0.75 0.05];
+                else
+                    app.Lamp_2.Color = [1.00 0.00 0.00];
+                end
+            else
+                toiletTotal = 0;
+            end
+        
+            if app.WashingMachineCheckBox.Value ~= 0
+                wMachineTotal = 15*wMachine;
+                if wMachine <= 2
+                    app.Lamp_5.Color = [0.00 1.00 0.00];
+                elseif wMachine <= 5
+                    app.Lamp_5.Color = [0.75 1.00 0.05];
+                elseif wMachine <= 8
+                    app.Lamp_5.Color = [0.95 1.00 0.05];
+                elseif wMachine <= 11
+                    app.Lamp_5.Color = [1.00 0.75 0.05];
+                else
+                    app.Lamp_5.Color = [1.00 0.00 0.00];
+                end
+            else 
+                wMachineTotal = 0;
+            end
+            
+            if app.DishwasherCheckBox.Value ~= 0
+                dWasherTotal = 8*dWasher;
+                if dWasher <= 2
+                    app.Lamp_6.Color = [0.00 1.00 0.00];
+                elseif dWasher <= 5
+                    app.Lamp_6.Color = [0.75 1.00 0.05];
+                elseif dWasher <= 8
+                    app.Lamp_6.Color = [0.95 1.00 0.05];
+                elseif dWasher <= 11
+                    app.Lamp_6.Color = [1.00 0.75 0.05];
+                else
+                    app.Lamp_6.Color = [1.00 0.00 0.00];
+                end
+            else 
+                dWasherTotal =0;
+            end
+            
+            if app.HygieneCheckBox.Value ~= 0
+                hygTotal = 7*2*hyg;
+                if hyg <= 2
+                    app.Lamp_3.Color = [0.00 1.00 0.00];
+                elseif hyg <= 5
+                    app.Lamp_3.Color = [0.75 1.00 0.05];
+                elseif hyg <= 8
+                    app.Lamp_3.Color = [0.95 1.00 0.05];
+                elseif hyg <= 11
+                    app.Lamp_3.Color = [1.00 0.75 0.05];
+                else
+                    app.Lamp_3.Color = [1.00 0.00 0.00];
+                end
+            else 
+                hygTotal = 0;
+            end
+            
+            app.GalPerWeekEditField.Value = showerTotal + bathTotal ...
+            + toiletTotal + wMachineTotal + dWasherTotal + hygTotal;
+           
+            % labels = repmat({'', '', '', '', '', ''},size(6));
+            labels = {'Showers', 'Baths', 'Toilet', 'Washing Machine', 'Dish Washer', 'Hygiene'};
+            
+            if app.GalPerWeekEditField.Value == 0
+                app.TryinputtingvaluestogetresultsLabel.Visible = ('on');
+            else
+                app.TryinputtingvaluestogetresultsLabel.Visible = ('off');
+                pie(app.UIAxes, [showerTotal bathTotal toiletTotal ...
+                wMachineTotal dWasherTotal hygTotal], [1 1 1 1 1 1], labels)
+            end
+            
+        end
+
+        % Value changed function: EditField_15
+        function Totals(app, event)
+            showerMin = app.EditField_7.Value;
+            bath = app.EditField_2.Value;
+            toilet = app.EditField_4.Value;
+            wMachine = app.EditField_5.Value;
+            dWasher = app.EditField_6.Value;
+            hyg = app.EditField_3.Value;
+            
+            showerTotal = 7*2*showerMin;
+            bathTotal = 36*bath;
+            toiletTotal = 7*3*toilet;
+            wMachineTotal = 15*wMachine;
+            dWasherTotal = 8*dWasher;
+            hygTotal = 7*2*hyg;
+            
+            if app.ShowerCheckBox.Value == 0
+                showerTotal = 0;
+                app.EditField_8.Value = showerMin;
+            end
+            
+            if app.BathCheckBox.Value ==0
+                bathTotal = 0;
+                app.EditField_9.Value = bath;
+            end
+            
+            if app.HygienceCheckBox.Value ==0
+                hygTotal = 0;
+                app.EditField_10.Value = hyg;
+            end
+            
+            if app.FlushingCheckBox.Value == 0
+                toiletTotal = 0;
+                app.EditField_11.Value = toilet;
+            end
+            
+            if app.WashingMachineCheckBox_2.Value == 0
+                wMachineTotal = 0;
+                app.EditField_12.Value = wMachine;
+            end
+            
+            if app.DishwasherCheckBox_2.Value == 0
+                dWasherTotal = 0;
+                app.EditField_13.Value = dWasher;
+            end
+            
+            actionTotal = showertotal + toiletToilet + bathTotal + ...
+                hygTotal + wMachineTotal + dWasherTotal;
+            V = (app.GalPerWeekEditField.Value * app.percentField.Value) / 100;
+            
+            pcShower = showerTotal/actionTotal;
+            pcToilet = toiletTotal/actionTotal;
+            pcHygiene = hygTotal/actionTotal;
+            pcBath = bathTotal/actionTotal;
+            pcWash = wMachineTotal/actionTotal;
+            pcDish = dWasherTotal/actionTotal;
+            
+            workS = pcShower * V;
+            workT = pcToilet * V;
+            workH = pcHygiene * V;
+            workB = pcBath * V;
+            workW = pcWash * V;
+            workD = pcDish * V;
+            
+            app.EditField_8.Value = (showerTotal - workS) / 14;
+            app.EditField_9.Value = (toiletTotal - workT) / 21;
+            app.EditField_10.Value = (hygTotal - workH) / 14;
+            app.EditField_11 = (bathTotal - workB) / 36;
+            app.EditField_12 = (wMachineTotal - workW) / 15;
+            app.EditField_13 = (dWasherTotal - workD) / 8;
+            
+            
+        end
+
+        % Button pushed function: CreatemyactionplanButton
+        function WhenPressed(app, event)
+             showerMin = app.EditField_7.Value;
+            bath = app.EditField_2.Value;
+            toilet = app.EditField_4.Value;
+            wMachine = app.EditField_5.Value;
+            dWasher = app.EditField_6.Value;
+            hyg = app.EditField_3.Value;
+            
+            showerTotal = 7*2*showerMin;
+            bathTotal = 36*bath;
+            toiletTotal = 7*3*toilet;
+            wMachineTotal = 15*wMachine;
+            dWasherTotal = 8*dWasher;
+            hygTotal = 7*2*hyg;
+            
+            if app.ShowerCheckBox.Value == 0
+                showerTotal = 0;
+                app.EditField_8.Value = showerMin;
+            end
+            
+            if app.BathCheckBox.Value ==0
+                bathTotal = 0;
+                app.EditField_9.Value = bath;
+            end
+            
+            if app.HygieneCheckBox.Value ==0
+                hygTotal = 0;
+                app.EditField_10.Value = hyg;
+            end
+            
+            if app.FlushingCheckBox.Value == 0
+                toiletTotal = 0;
+                app.EditField_11.Value = toilet;
+            end
+            
+            if app.WashingMachineCheckBox_2.Value == 0
+                wMachineTotal = 0;
+                app.EditField_12.Value = wMachine;
+            end
+            
+            if app.DishwasherCheckBox_2.Value == 0
+                dWasherTotal = 0;
+                app.EditField_13.Value = dWasher;
+            end
+            
+            actionTotal = showerTotal + toiletTotal + bathTotal + ...
+                hygTotal + wMachineTotal + dWasherTotal;
+            V = (app.GalPerWeekEditField.Value * app.percentField.Value) / 100;
+            
+            pcShower = showerTotal/actionTotal;
+            pcToilet = toiletTotal/actionTotal;
+            pcHygiene = hygTotal/actionTotal;
+            pcBath = bathTotal/actionTotal;
+            pcWash = wMachineTotal/actionTotal;
+            pcDish = dWasherTotal/actionTotal;
+            
+            workS = pcShower * V;
+            workT = pcToilet * V;
+            workH = pcHygiene * V;
+            workB = pcBath * V;
+            workW = pcWash * V;
+            workD = pcDish * V;
+            
+            app.EditField_8.Value = cast(floor((showerTotal - workS) / 14), "uint8");
+            app.EditField_9.Value = cast(floor((toiletTotal - workT) / 21), "uint8");
+            app.EditField_10.Value = cast(floor((hygTotal - workH) / 14), "uint8");
+            app.EditField_11 = cast(floor((bathTotal - workB) / 36), "uint8");
+            app.EditField_12 = cast(floor((wMachineTotal - workW) / 15), "uint8");
+            app.EditField_13 = cast(floor((dWasherTotal - workD) / 8), "uint8");
+            
+        end
+    end
+
+    % Component initialization
+    methods (Access = private)
+
+        % Create UIFigure and components
+        function createComponents(app)
+
+            % Create UIFigure and hide until all components are created
+            app.UIFigure = uifigure('Visible', 'off');
+            app.UIFigure.AutoResizeChildren = 'off';
+            app.UIFigure.Color = [0.4 0.502 0.749];
+            app.UIFigure.Colormap = [0.2431 0.149 0.6588;0.2431 0.1529 0.6745;0.2471 0.1569 0.6863;0.2471 0.1608 0.698;0.251 0.1647 0.7059;0.251 0.1686 0.7176;0.2549 0.1725 0.7294;0.2549 0.1765 0.7412;0.2588 0.1804 0.749;0.2588 0.1843 0.7608;0.2627 0.1882 0.7725;0.2627 0.1922 0.7843;0.2627 0.1961 0.7922;0.2667 0.2 0.8039;0.2667 0.2039 0.8157;0.2706 0.2078 0.8235;0.2706 0.2157 0.8353;0.2706 0.2196 0.8431;0.2745 0.2235 0.851;0.2745 0.2275 0.8627;0.2745 0.2314 0.8706;0.2745 0.2392 0.8784;0.2784 0.2431 0.8824;0.2784 0.2471 0.8902;0.2784 0.2549 0.898;0.2784 0.2588 0.902;0.2784 0.2667 0.9098;0.2784 0.2706 0.9137;0.2784 0.2745 0.9216;0.2824 0.2824 0.9255;0.2824 0.2863 0.9294;0.2824 0.2941 0.9333;0.2824 0.298 0.9412;0.2824 0.3059 0.9451;0.2824 0.3098 0.949;0.2824 0.3137 0.9529;0.2824 0.3216 0.9569;0.2824 0.3255 0.9608;0.2824 0.3294 0.9647;0.2784 0.3373 0.9686;0.2784 0.3412 0.9686;0.2784 0.349 0.9725;0.2784 0.3529 0.9765;0.2784 0.3569 0.9804;0.2784 0.3647 0.9804;0.2745 0.3686 0.9843;0.2745 0.3765 0.9843;0.2745 0.3804 0.9882;0.2706 0.3843 0.9882;0.2706 0.3922 0.9922;0.2667 0.3961 0.9922;0.2627 0.4039 0.9922;0.2627 0.4078 0.9961;0.2588 0.4157 0.9961;0.2549 0.4196 0.9961;0.251 0.4275 0.9961;0.2471 0.4314 1;0.2431 0.4392 1;0.2353 0.4431 1;0.2314 0.451 1;0.2235 0.4549 1;0.2196 0.4627 0.9961;0.2118 0.4667 0.9961;0.2078 0.4745 0.9922;0.2 0.4784 0.9922;0.1961 0.4863 0.9882;0.1922 0.4902 0.9882;0.1882 0.498 0.9843;0.1843 0.502 0.9804;0.1843 0.5098 0.9804;0.1804 0.5137 0.9765;0.1804 0.5176 0.9725;0.1804 0.5255 0.9725;0.1804 0.5294 0.9686;0.1765 0.5333 0.9647;0.1765 0.5412 0.9608;0.1765 0.5451 0.9569;0.1765 0.549 0.9529;0.1765 0.5569 0.949;0.1725 0.5608 0.9451;0.1725 0.5647 0.9412;0.1686 0.5686 0.9373;0.1647 0.5765 0.9333;0.1608 0.5804 0.9294;0.1569 0.5843 0.9255;0.1529 0.5922 0.9216;0.1529 0.5961 0.9176;0.149 0.6 0.9137;0.149 0.6039 0.9098;0.1451 0.6078 0.9098;0.1451 0.6118 0.9059;0.1412 0.6196 0.902;0.1412 0.6235 0.898;0.1373 0.6275 0.898;0.1373 0.6314 0.8941;0.1333 0.6353 0.8941;0.1294 0.6392 0.8902;0.1255 0.6471 0.8902;0.1216 0.651 0.8863;0.1176 0.6549 0.8824;0.1137 0.6588 0.8824;0.1137 0.6627 0.8784;0.1098 0.6667 0.8745;0.1059 0.6706 0.8706;0.102 0.6745 0.8667;0.098 0.6784 0.8627;0.0902 0.6824 0.8549;0.0863 0.6863 0.851;0.0784 0.6902 0.8471;0.0706 0.6941 0.8392;0.0627 0.698 0.8353;0.0549 0.702 0.8314;0.0431 0.702 0.8235;0.0314 0.7059 0.8196;0.0235 0.7098 0.8118;0.0157 0.7137 0.8078;0.0078 0.7176 0.8;0.0039 0.7176 0.7922;0 0.7216 0.7882;0 0.7255 0.7804;0 0.7294 0.7765;0.0039 0.7294 0.7686;0.0078 0.7333 0.7608;0.0157 0.7333 0.7569;0.0235 0.7373 0.749;0.0353 0.7412 0.7412;0.051 0.7412 0.7373;0.0627 0.7451 0.7294;0.0784 0.7451 0.7216;0.0902 0.749 0.7137;0.102 0.7529 0.7098;0.1137 0.7529 0.702;0.1255 0.7569 0.6941;0.1373 0.7569 0.6863;0.1451 0.7608 0.6824;0.1529 0.7608 0.6745;0.1608 0.7647 0.6667;0.1686 0.7647 0.6588;0.1725 0.7686 0.651;0.1804 0.7686 0.6471;0.1843 0.7725 0.6392;0.1922 0.7725 0.6314;0.1961 0.7765 0.6235;0.2 0.7804 0.6157;0.2078 0.7804 0.6078;0.2118 0.7843 0.6;0.2196 0.7843 0.5882;0.2235 0.7882 0.5804;0.2314 0.7882 0.5725;0.2392 0.7922 0.5647;0.251 0.7922 0.5529;0.2588 0.7922 0.5451;0.2706 0.7961 0.5373;0.2824 0.7961 0.5255;0.2941 0.7961 0.5176;0.3059 0.8 0.5059;0.3176 0.8 0.498;0.3294 0.8 0.4863;0.3412 0.8 0.4784;0.3529 0.8 0.4667;0.3686 0.8039 0.4549;0.3804 0.8039 0.4471;0.3922 0.8039 0.4353;0.4039 0.8039 0.4235;0.4196 0.8039 0.4118;0.4314 0.8039 0.4;0.4471 0.8039 0.3922;0.4627 0.8 0.3804;0.4745 0.8 0.3686;0.4902 0.8 0.3569;0.5059 0.8 0.349;0.5176 0.8 0.3373;0.5333 0.7961 0.3255;0.5451 0.7961 0.3176;0.5608 0.7961 0.3059;0.5765 0.7922 0.2941;0.5882 0.7922 0.2824;0.6039 0.7882 0.2745;0.6157 0.7882 0.2627;0.6314 0.7843 0.251;0.6431 0.7843 0.2431;0.6549 0.7804 0.2314;0.6706 0.7804 0.2235;0.6824 0.7765 0.2157;0.698 0.7765 0.2078;0.7098 0.7725 0.2;0.7216 0.7686 0.1922;0.7333 0.7686 0.1843;0.7451 0.7647 0.1765;0.7608 0.7647 0.1725;0.7725 0.7608 0.1647;0.7843 0.7569 0.1608;0.7961 0.7569 0.1569;0.8078 0.7529 0.1529;0.8157 0.749 0.1529;0.8275 0.749 0.1529;0.8392 0.7451 0.1529;0.851 0.7451 0.1569;0.8588 0.7412 0.1569;0.8706 0.7373 0.1608;0.8824 0.7373 0.1647;0.8902 0.7373 0.1686;0.902 0.7333 0.1765;0.9098 0.7333 0.1804;0.9176 0.7294 0.1882;0.9255 0.7294 0.1961;0.9373 0.7294 0.2078;0.9451 0.7294 0.2157;0.9529 0.7294 0.2235;0.9608 0.7294 0.2314;0.9686 0.7294 0.2392;0.9765 0.7294 0.2431;0.9843 0.7333 0.2431;0.9882 0.7373 0.2431;0.9961 0.7412 0.2392;0.9961 0.7451 0.2353;0.9961 0.7529 0.2314;0.9961 0.7569 0.2275;0.9961 0.7608 0.2235;0.9961 0.7686 0.2196;0.9961 0.7725 0.2157;0.9961 0.7804 0.2078;0.9961 0.7843 0.2039;0.9961 0.7922 0.2;0.9922 0.7961 0.1961;0.9922 0.8039 0.1922;0.9922 0.8078 0.1922;0.9882 0.8157 0.1882;0.9843 0.8235 0.1843;0.9843 0.8275 0.1804;0.9804 0.8353 0.1804;0.9765 0.8392 0.1765;0.9765 0.8471 0.1725;0.9725 0.851 0.1686;0.9686 0.8588 0.1647;0.9686 0.8667 0.1647;0.9647 0.8706 0.1608;0.9647 0.8784 0.1569;0.9608 0.8824 0.1569;0.9608 0.8902 0.1529;0.9608 0.898 0.149;0.9608 0.902 0.149;0.9608 0.9098 0.1451;0.9608 0.9137 0.1412;0.9608 0.9216 0.1373;0.9608 0.9255 0.1333;0.9608 0.9333 0.1294;0.9647 0.9373 0.1255;0.9647 0.9451 0.1216;0.9647 0.949 0.1176;0.9686 0.9569 0.1098;0.9686 0.9608 0.1059;0.9725 0.9686 0.102;0.9725 0.9725 0.0941;0.9765 0.9765 0.0863;0.9765 0.9843 0.0824];
+            app.UIFigure.Position = [100 100 1280 670];
+            app.UIFigure.Name = 'MATLAB App';
+            app.UIFigure.WindowState = 'maximized';
+
+            % Create UIAxes
+            app.UIAxes = uiaxes(app.UIFigure);
+            xlabel(app.UIAxes, 'X')
+            ylabel(app.UIAxes, 'Y')
+            zlabel(app.UIAxes, 'Z')
+            app.UIAxes.Colormap = [0.2431 0.149 0.6588;0.2431 0.1529 0.6745;0.2471 0.1569 0.6863;0.2471 0.1608 0.698;0.251 0.1647 0.7059;0.251 0.1686 0.7176;0.2549 0.1725 0.7294;0.2549 0.1765 0.7412;0.2588 0.1804 0.749;0.2588 0.1843 0.7608;0.2627 0.1882 0.7725;0.2627 0.1922 0.7843;0.2627 0.1961 0.7922;0.2667 0.2 0.8039;0.2667 0.2039 0.8157;0.2706 0.2078 0.8235;0.2706 0.2157 0.8353;0.2706 0.2196 0.8431;0.2745 0.2235 0.851;0.2745 0.2275 0.8627;0.2745 0.2314 0.8706;0.2745 0.2392 0.8784;0.2784 0.2431 0.8824;0.2784 0.2471 0.8902;0.2784 0.2549 0.898;0.2784 0.2588 0.902;0.2784 0.2667 0.9098;0.2784 0.2706 0.9137;0.2784 0.2745 0.9216;0.2824 0.2824 0.9255;0.2824 0.2863 0.9294;0.2824 0.2941 0.9333;0.2824 0.298 0.9412;0.2824 0.3059 0.9451;0.2824 0.3098 0.949;0.2824 0.3137 0.9529;0.2824 0.3216 0.9569;0.2824 0.3255 0.9608;0.2824 0.3294 0.9647;0.2784 0.3373 0.9686;0.2784 0.3412 0.9686;0.2784 0.349 0.9725;0.2784 0.3529 0.9765;0.2784 0.3569 0.9804;0.2784 0.3647 0.9804;0.2745 0.3686 0.9843;0.2745 0.3765 0.9843;0.2745 0.3804 0.9882;0.2706 0.3843 0.9882;0.2706 0.3922 0.9922;0.2667 0.3961 0.9922;0.2627 0.4039 0.9922;0.2627 0.4078 0.9961;0.2588 0.4157 0.9961;0.2549 0.4196 0.9961;0.251 0.4275 0.9961;0.2471 0.4314 1;0.2431 0.4392 1;0.2353 0.4431 1;0.2314 0.451 1;0.2235 0.4549 1;0.2196 0.4627 0.9961;0.2118 0.4667 0.9961;0.2078 0.4745 0.9922;0.2 0.4784 0.9922;0.1961 0.4863 0.9882;0.1922 0.4902 0.9882;0.1882 0.498 0.9843;0.1843 0.502 0.9804;0.1843 0.5098 0.9804;0.1804 0.5137 0.9765;0.1804 0.5176 0.9725;0.1804 0.5255 0.9725;0.1804 0.5294 0.9686;0.1765 0.5333 0.9647;0.1765 0.5412 0.9608;0.1765 0.5451 0.9569;0.1765 0.549 0.9529;0.1765 0.5569 0.949;0.1725 0.5608 0.9451;0.1725 0.5647 0.9412;0.1686 0.5686 0.9373;0.1647 0.5765 0.9333;0.1608 0.5804 0.9294;0.1569 0.5843 0.9255;0.1529 0.5922 0.9216;0.1529 0.5961 0.9176;0.149 0.6 0.9137;0.149 0.6039 0.9098;0.1451 0.6078 0.9098;0.1451 0.6118 0.9059;0.1412 0.6196 0.902;0.1412 0.6235 0.898;0.1373 0.6275 0.898;0.1373 0.6314 0.8941;0.1333 0.6353 0.8941;0.1294 0.6392 0.8902;0.1255 0.6471 0.8902;0.1216 0.651 0.8863;0.1176 0.6549 0.8824;0.1137 0.6588 0.8824;0.1137 0.6627 0.8784;0.1098 0.6667 0.8745;0.1059 0.6706 0.8706;0.102 0.6745 0.8667;0.098 0.6784 0.8627;0.0902 0.6824 0.8549;0.0863 0.6863 0.851;0.0784 0.6902 0.8471;0.0706 0.6941 0.8392;0.0627 0.698 0.8353;0.0549 0.702 0.8314;0.0431 0.702 0.8235;0.0314 0.7059 0.8196;0.0235 0.7098 0.8118;0.0157 0.7137 0.8078;0.0078 0.7176 0.8;0.0039 0.7176 0.7922;0 0.7216 0.7882;0 0.7255 0.7804;0 0.7294 0.7765;0.0039 0.7294 0.7686;0.0078 0.7333 0.7608;0.0157 0.7333 0.7569;0.0235 0.7373 0.749;0.0353 0.7412 0.7412;0.051 0.7412 0.7373;0.0627 0.7451 0.7294;0.0784 0.7451 0.7216;0.0902 0.749 0.7137;0.102 0.7529 0.7098;0.1137 0.7529 0.702;0.1255 0.7569 0.6941;0.1373 0.7569 0.6863;0.1451 0.7608 0.6824;0.1529 0.7608 0.6745;0.1608 0.7647 0.6667;0.1686 0.7647 0.6588;0.1725 0.7686 0.651;0.1804 0.7686 0.6471;0.1843 0.7725 0.6392;0.1922 0.7725 0.6314;0.1961 0.7765 0.6235;0.2 0.7804 0.6157;0.2078 0.7804 0.6078;0.2118 0.7843 0.6;0.2196 0.7843 0.5882;0.2235 0.7882 0.5804;0.2314 0.7882 0.5725;0.2392 0.7922 0.5647;0.251 0.7922 0.5529;0.2588 0.7922 0.5451;0.2706 0.7961 0.5373;0.2824 0.7961 0.5255;0.2941 0.7961 0.5176;0.3059 0.8 0.5059;0.3176 0.8 0.498;0.3294 0.8 0.4863;0.3412 0.8 0.4784;0.3529 0.8 0.4667;0.3686 0.8039 0.4549;0.3804 0.8039 0.4471;0.3922 0.8039 0.4353;0.4039 0.8039 0.4235;0.4196 0.8039 0.4118;0.4314 0.8039 0.4;0.4471 0.8039 0.3922;0.4627 0.8 0.3804;0.4745 0.8 0.3686;0.4902 0.8 0.3569;0.5059 0.8 0.349;0.5176 0.8 0.3373;0.5333 0.7961 0.3255;0.5451 0.7961 0.3176;0.5608 0.7961 0.3059;0.5765 0.7922 0.2941;0.5882 0.7922 0.2824;0.6039 0.7882 0.2745;0.6157 0.7882 0.2627;0.6314 0.7843 0.251;0.6431 0.7843 0.2431;0.6549 0.7804 0.2314;0.6706 0.7804 0.2235;0.6824 0.7765 0.2157;0.698 0.7765 0.2078;0.7098 0.7725 0.2;0.7216 0.7686 0.1922;0.7333 0.7686 0.1843;0.7451 0.7647 0.1765;0.7608 0.7647 0.1725;0.7725 0.7608 0.1647;0.7843 0.7569 0.1608;0.7961 0.7569 0.1569;0.8078 0.7529 0.1529;0.8157 0.749 0.1529;0.8275 0.749 0.1529;0.8392 0.7451 0.1529;0.851 0.7451 0.1569;0.8588 0.7412 0.1569;0.8706 0.7373 0.1608;0.8824 0.7373 0.1647;0.8902 0.7373 0.1686;0.902 0.7333 0.1765;0.9098 0.7333 0.1804;0.9176 0.7294 0.1882;0.9255 0.7294 0.1961;0.9373 0.7294 0.2078;0.9451 0.7294 0.2157;0.9529 0.7294 0.2235;0.9608 0.7294 0.2314;0.9686 0.7294 0.2392;0.9765 0.7294 0.2431;0.9843 0.7333 0.2431;0.9882 0.7373 0.2431;0.9961 0.7412 0.2392;0.9961 0.7451 0.2353;0.9961 0.7529 0.2314;0.9961 0.7569 0.2275;0.9961 0.7608 0.2235;0.9961 0.7686 0.2196;0.9961 0.7725 0.2157;0.9961 0.7804 0.2078;0.9961 0.7843 0.2039;0.9961 0.7922 0.2;0.9922 0.7961 0.1961;0.9922 0.8039 0.1922;0.9922 0.8078 0.1922;0.9882 0.8157 0.1882;0.9843 0.8235 0.1843;0.9843 0.8275 0.1804;0.9804 0.8353 0.1804;0.9765 0.8392 0.1765;0.9765 0.8471 0.1725;0.9725 0.851 0.1686;0.9686 0.8588 0.1647;0.9686 0.8667 0.1647;0.9647 0.8706 0.1608;0.9647 0.8784 0.1569;0.9608 0.8824 0.1569;0.9608 0.8902 0.1529;0.9608 0.898 0.149;0.9608 0.902 0.149;0.9608 0.9098 0.1451;0.9608 0.9137 0.1412;0.9608 0.9216 0.1373;0.9608 0.9255 0.1333;0.9608 0.9333 0.1294;0.9647 0.9373 0.1255;0.9647 0.9451 0.1216;0.9647 0.949 0.1176;0.9686 0.9569 0.1098;0.9686 0.9608 0.1059;0.9725 0.9686 0.102;0.9725 0.9725 0.0941;0.9765 0.9765 0.0863;0.9765 0.9843 0.0824];
+            app.UIAxes.BoxStyle = 'full';
+            app.UIAxes.ClippingStyle = 'rectangle';
+            app.UIAxes.Visible = 'off';
+            app.UIAxes.Position = [142 20 249 187];
+
+            % Create MyWaterUsageLabel
+            app.MyWaterUsageLabel = uilabel(app.UIFigure);
+            app.MyWaterUsageLabel.FontName = 'Artifakt Element Medium';
+            app.MyWaterUsageLabel.FontSize = 32;
+            app.MyWaterUsageLabel.Position = [43 595 252 47];
+            app.MyWaterUsageLabel.Text = 'My Water Usage';
+
+            % Create Image
+            app.Image = uiimage(app.UIFigure);
+            app.Image.Position = [492 468 367 170];
+            app.Image.ImageSource = 'WaterWoke.png';
+
+            % Create EditField_2
+            app.EditField_2 = uieditfield(app.UIFigure, 'numeric');
+            app.EditField_2.Limits = [0 15];
+            app.EditField_2.RoundFractionalValues = 'on';
+            app.EditField_2.FontSize = 16;
+            app.EditField_2.Visible = 'off';
+            app.EditField_2.Position = [276 384 90 22];
+
+            % Create EditField_3
+            app.EditField_3 = uieditfield(app.UIFigure, 'numeric');
+            app.EditField_3.Limits = [0 120];
+            app.EditField_3.RoundFractionalValues = 'on';
+            app.EditField_3.FontSize = 16;
+            app.EditField_3.Visible = 'off';
+            app.EditField_3.Position = [276 477 90 24];
+
+            % Create EditField_4
+            app.EditField_4 = uieditfield(app.UIFigure, 'numeric');
+            app.EditField_4.Limits = [0 69];
+            app.EditField_4.RoundFractionalValues = 'on';
+            app.EditField_4.FontSize = 16;
+            app.EditField_4.Visible = 'off';
+            app.EditField_4.Position = [276 511 90 23];
+
+            % Create EditField_5
+            app.EditField_5 = uieditfield(app.UIFigure, 'numeric');
+            app.EditField_5.Limits = [0 15];
+            app.EditField_5.RoundFractionalValues = 'on';
+            app.EditField_5.FontSize = 16;
+            app.EditField_5.Visible = 'off';
+            app.EditField_5.Position = [276 351 90 23];
+
+            % Create EditField_6
+            app.EditField_6 = uieditfield(app.UIFigure, 'numeric');
+            app.EditField_6.Limits = [0 15];
+            app.EditField_6.RoundFractionalValues = 'on';
+            app.EditField_6.FontSize = 16;
+            app.EditField_6.Visible = 'off';
+            app.EditField_6.Position = [276 317 90 24];
+
+            % Create TakingaShowerCheckBox
+            app.TakingaShowerCheckBox = uicheckbox(app.UIFigure);
+            app.TakingaShowerCheckBox.ValueChangedFcn = createCallbackFcn(app, @BoxOneChecked, true);
+            app.TakingaShowerCheckBox.Text = 'Taking a Shower';
+            app.TakingaShowerCheckBox.FontName = 'Artifakt Element';
+            app.TakingaShowerCheckBox.FontSize = 20;
+            app.TakingaShowerCheckBox.Position = [52 538 176 29];
+
+            % Create RunningaBathCheckBox
+            app.RunningaBathCheckBox = uicheckbox(app.UIFigure);
+            app.RunningaBathCheckBox.ValueChangedFcn = createCallbackFcn(app, @BoxTwoChecked, true);
+            app.RunningaBathCheckBox.Text = 'Running a Bath';
+            app.RunningaBathCheckBox.FontName = 'Artifakt Element';
+            app.RunningaBathCheckBox.FontSize = 20;
+            app.RunningaBathCheckBox.Position = [52 381 167 29];
+
+            % Create HygieneCheckBox
+            app.HygieneCheckBox = uicheckbox(app.UIFigure);
+            app.HygieneCheckBox.ValueChangedFcn = createCallbackFcn(app, @BoxSixChecked, true);
+            app.HygieneCheckBox.Text = 'Hygiene*';
+            app.HygieneCheckBox.FontName = 'Artifakt Element';
+            app.HygieneCheckBox.FontSize = 20;
+            app.HygieneCheckBox.Position = [52 472 108 29];
+
+            % Create FlushingToiletCheckBox
+            app.FlushingToiletCheckBox = uicheckbox(app.UIFigure);
+            app.FlushingToiletCheckBox.ValueChangedFcn = createCallbackFcn(app, @BoxThreeChecked, true);
+            app.FlushingToiletCheckBox.Text = 'Flushing Toilet';
+            app.FlushingToiletCheckBox.FontName = 'Artifakt Element';
+            app.FlushingToiletCheckBox.FontSize = 20;
+            app.FlushingToiletCheckBox.Position = [52 506 160 29];
+
+            % Create WashingMachineCheckBox
+            app.WashingMachineCheckBox = uicheckbox(app.UIFigure);
+            app.WashingMachineCheckBox.ValueChangedFcn = createCallbackFcn(app, @BoxFourChecked, true);
+            app.WashingMachineCheckBox.Text = 'Washing Machine';
+            app.WashingMachineCheckBox.FontName = 'Artifakt Element';
+            app.WashingMachineCheckBox.FontSize = 20;
+            app.WashingMachineCheckBox.Position = [52 345 188 29];
+
+            % Create DishwasherCheckBox
+            app.DishwasherCheckBox = uicheckbox(app.UIFigure);
+            app.DishwasherCheckBox.ValueChangedFcn = createCallbackFcn(app, @BoxFiveChecked, true);
+            app.DishwasherCheckBox.Text = 'Dishwasher';
+            app.DishwasherCheckBox.FontName = 'Artifakt Element';
+            app.DishwasherCheckBox.FontSize = 20;
+            app.DishwasherCheckBox.Position = [52 311 132 29];
+
+            % Create Label
+            app.Label = uilabel(app.UIFigure);
+            app.Label.Position = [-29 699 2 2];
+
+            % Create Label2
+            app.Label2 = uilabel(app.UIFigure);
+            app.Label2.Position = [-59 729 2 2];
+            app.Label2.Text = 'Label2';
+
+            % Create TimesLabel
+            app.TimesLabel = uilabel(app.UIFigure);
+            app.TimesLabel.FontName = 'Artifakt Element';
+            app.TimesLabel.FontSize = 16;
+            app.TimesLabel.Visible = 'off';
+            app.TimesLabel.Position = [375 382 50 23];
+            app.TimesLabel.Text = 'Times';
+
+            % Create MinutesLabel_3
+            app.MinutesLabel_3 = uilabel(app.UIFigure);
+            app.MinutesLabel_3.FontName = 'Artifakt Element';
+            app.MinutesLabel_3.FontSize = 16;
+            app.MinutesLabel_3.Visible = 'off';
+            app.MinutesLabel_3.Position = [375 477 66 23];
+            app.MinutesLabel_3.Text = 'Minutes';
+
+            % Create TimesLabel_2
+            app.TimesLabel_2 = uilabel(app.UIFigure);
+            app.TimesLabel_2.FontName = 'Artifakt Element';
+            app.TimesLabel_2.FontSize = 16;
+            app.TimesLabel_2.Visible = 'off';
+            app.TimesLabel_2.Position = [375 512 50 23];
+            app.TimesLabel_2.Text = 'Times';
+
+            % Create LoadsLabel
+            app.LoadsLabel = uilabel(app.UIFigure);
+            app.LoadsLabel.FontName = 'Artifakt Element';
+            app.LoadsLabel.FontSize = 16;
+            app.LoadsLabel.Visible = 'off';
+            app.LoadsLabel.Position = [375 350 50 23];
+            app.LoadsLabel.Text = 'Loads';
+
+            % Create LoadsLabel_2
+            app.LoadsLabel_2 = uilabel(app.UIFigure);
+            app.LoadsLabel_2.FontName = 'Artifakt Element';
+            app.LoadsLabel_2.FontSize = 16;
+            app.LoadsLabel_2.Visible = 'off';
+            app.LoadsLabel_2.Position = [375 316 50 23];
+            app.LoadsLabel_2.Text = 'Loads';
+
+            % Create BrushingTeethWashingHandsetcLabel
+            app.BrushingTeethWashingHandsetcLabel = uilabel(app.UIFigure);
+            app.BrushingTeethWashingHandsetcLabel.FontName = 'Artifakt Element';
+            app.BrushingTeethWashingHandsetcLabel.Position = [53 449 228 22];
+            app.BrushingTeethWashingHandsetcLabel.Text = '* Brushing Teeth, Washing Hands, etc...';
+
+            % Create PerWeekLabel
+            app.PerWeekLabel = uilabel(app.UIFigure);
+            app.PerWeekLabel.FontName = 'Artifakt Element';
+            app.PerWeekLabel.FontSize = 16;
+            app.PerWeekLabel.Position = [43 414 88 23];
+            app.PerWeekLabel.Text = '(Per Week)';
+
+            % Create EditField_7
+            app.EditField_7 = uieditfield(app.UIFigure, 'numeric');
+            app.EditField_7.Limits = [0 80];
+            app.EditField_7.RoundFractionalValues = 'on';
+            app.EditField_7.FontSize = 16;
+            app.EditField_7.Visible = 'off';
+            app.EditField_7.Position = [276 544 90 23];
+
+            % Create MinutesLabel_4
+            app.MinutesLabel_4 = uilabel(app.UIFigure);
+            app.MinutesLabel_4.FontName = 'Artifakt Element';
+            app.MinutesLabel_4.FontSize = 16;
+            app.MinutesLabel_4.Visible = 'off';
+            app.MinutesLabel_4.Position = [375 544 66 23];
+            app.MinutesLabel_4.Text = 'Minutes';
+
+            % Create TotalWaterUsedLabel
+            app.TotalWaterUsedLabel = uilabel(app.UIFigure);
+            app.TotalWaterUsedLabel.WordWrap = 'on';
+            app.TotalWaterUsedLabel.FontName = 'Artifakt Element Medium';
+            app.TotalWaterUsedLabel.FontSize = 28;
+            app.TotalWaterUsedLabel.Position = [16 212 225 41];
+            app.TotalWaterUsedLabel.Text = 'Total Water Used';
+
+            % Create GalPerWeekEditFieldLabel
+            app.GalPerWeekEditFieldLabel = uilabel(app.UIFigure);
+            app.GalPerWeekEditFieldLabel.HorizontalAlignment = 'right';
+            app.GalPerWeekEditFieldLabel.FontName = 'Artifakt Element';
+            app.GalPerWeekEditFieldLabel.FontSize = 20;
+            app.GalPerWeekEditFieldLabel.Position = [14 134 128 31];
+            app.GalPerWeekEditFieldLabel.Text = 'Gal Per Week';
+
+            % Create GalPerWeekEditField
+            app.GalPerWeekEditField = uieditfield(app.UIFigure, 'numeric');
+            app.GalPerWeekEditField.Editable = 'off';
+            app.GalPerWeekEditField.FontSize = 20;
+            app.GalPerWeekEditField.Position = [19 170 78 36];
+
+            % Create CalculateButton
+            app.CalculateButton = uibutton(app.UIFigure, 'push');
+            app.CalculateButton.ButtonPushedFcn = createCallbackFcn(app, @Calculate, true);
+            app.CalculateButton.FontSize = 20;
+            app.CalculateButton.Position = [52 272 374 31];
+            app.CalculateButton.Text = 'Calculate';
+
+            % Create TryinputtingvaluestogetresultsLabel
+            app.TryinputtingvaluestogetresultsLabel = uilabel(app.UIFigure);
+            app.TryinputtingvaluestogetresultsLabel.FontName = 'Artifakt Element';
+            app.TryinputtingvaluestogetresultsLabel.FontSize = 20;
+            app.TryinputtingvaluestogetresultsLabel.FontColor = [1 0 0];
+            app.TryinputtingvaluestogetresultsLabel.Visible = 'off';
+            app.TryinputtingvaluestogetresultsLabel.Position = [503 406 336 31];
+            app.TryinputtingvaluestogetresultsLabel.Text = 'Try inputting values to get results!';
+
+            % Create PerDayLabel
+            app.PerDayLabel = uilabel(app.UIFigure);
+            app.PerDayLabel.FontName = 'Artifakt Element';
+            app.PerDayLabel.FontSize = 16;
+            app.PerDayLabel.Position = [43 569 76 23];
+            app.PerDayLabel.Text = '(Per Day)';
+
+            % Create Lamp
+            app.Lamp = uilamp(app.UIFigure);
+            app.Lamp.Position = [18 542 20 20];
+
+            % Create Lamp_2
+            app.Lamp_2 = uilamp(app.UIFigure);
+            app.Lamp_2.Position = [19 511 20 20];
+
+            % Create Lamp_3
+            app.Lamp_3 = uilamp(app.UIFigure);
+            app.Lamp_3.Position = [19 476 20 20];
+
+            % Create Lamp_4
+            app.Lamp_4 = uilamp(app.UIFigure);
+            app.Lamp_4.Position = [19 388 20 20];
+
+            % Create Lamp_5
+            app.Lamp_5 = uilamp(app.UIFigure);
+            app.Lamp_5.Position = [19 350 20 20];
+
+            % Create Lamp_6
+            app.Lamp_6 = uilamp(app.UIFigure);
+            app.Lamp_6.Position = [19 315 20 20];
+
+            % Create ActionPlanPanel
+            app.ActionPlanPanel = uipanel(app.UIFigure);
+            app.ActionPlanPanel.BackgroundColor = [0.6667 0.7608 0.8667];
+            app.ActionPlanPanel.FontName = 'Artifakt Element';
+            app.ActionPlanPanel.Position = [940 31 317 522];
+
+            % Create showerGoalText
+            app.showerGoalText = uitextarea(app.ActionPlanPanel);
+            app.showerGoalText.Editable = 'off';
+            app.showerGoalText.FontName = 'Franklin Gothic Book';
+            app.showerGoalText.FontSize = 16;
+            app.showerGoalText.Position = [7 448 304 47];
+
+            % Create showerGoalText_2
+            app.showerGoalText_2 = uitextarea(app.ActionPlanPanel);
+            app.showerGoalText_2.Editable = 'off';
+            app.showerGoalText_2.FontName = 'Franklin Gothic Book';
+            app.showerGoalText_2.FontSize = 16;
+            app.showerGoalText_2.Position = [7 375 304 47];
+
+            % Create showerGoalText_3
+            app.showerGoalText_3 = uitextarea(app.ActionPlanPanel);
+            app.showerGoalText_3.Editable = 'off';
+            app.showerGoalText_3.FontName = 'Franklin Gothic Book';
+            app.showerGoalText_3.FontSize = 16;
+            app.showerGoalText_3.Position = [7 305 304 47];
+
+            % Create showerGoalText_4
+            app.showerGoalText_4 = uitextarea(app.ActionPlanPanel);
+            app.showerGoalText_4.Editable = 'off';
+            app.showerGoalText_4.FontName = 'Franklin Gothic Book';
+            app.showerGoalText_4.FontSize = 16;
+            app.showerGoalText_4.Position = [7 234 304 47];
+
+            % Create showerGoalText_5
+            app.showerGoalText_5 = uitextarea(app.ActionPlanPanel);
+            app.showerGoalText_5.Editable = 'off';
+            app.showerGoalText_5.FontName = 'Franklin Gothic Book';
+            app.showerGoalText_5.FontSize = 16;
+            app.showerGoalText_5.Position = [7 159 304 47];
+
+            % Create showerGoalText_6
+            app.showerGoalText_6 = uitextarea(app.ActionPlanPanel);
+            app.showerGoalText_6.Editable = 'off';
+            app.showerGoalText_6.FontName = 'Franklin Gothic Book';
+            app.showerGoalText_6.FontSize = 16;
+            app.showerGoalText_6.Position = [7 87 304 47];
+
+            % Create showerGoalText_7
+            app.showerGoalText_7 = uitextarea(app.ActionPlanPanel);
+            app.showerGoalText_7.Editable = 'off';
+            app.showerGoalText_7.FontName = 'Franklin Gothic Book';
+            app.showerGoalText_7.FontSize = 16;
+            app.showerGoalText_7.Position = [7 14 304 47];
+
+            % Create ShowerLabel
+            app.ShowerLabel = uilabel(app.ActionPlanPanel);
+            app.ShowerLabel.FontName = 'Artifakt Element';
+            app.ShowerLabel.FontSize = 18;
+            app.ShowerLabel.Position = [128 494 69 26];
+            app.ShowerLabel.Text = 'Shower';
+
+            % Create HygieneLabel
+            app.HygieneLabel = uilabel(app.ActionPlanPanel);
+            app.HygieneLabel.FontName = 'Artifakt Element';
+            app.HygieneLabel.FontSize = 18;
+            app.HygieneLabel.Position = [124 351 75 26];
+            app.HygieneLabel.Text = 'Hygiene';
+
+            % Create FlushingLabel
+            app.FlushingLabel = uilabel(app.ActionPlanPanel);
+            app.FlushingLabel.FontName = 'Artifakt Element';
+            app.FlushingLabel.FontSize = 18;
+            app.FlushingLabel.Position = [120 278 78 26];
+            app.FlushingLabel.Text = 'Flushing';
+
+            % Create WashingMachineLabel
+            app.WashingMachineLabel = uilabel(app.ActionPlanPanel);
+            app.WashingMachineLabel.FontName = 'Artifakt Element';
+            app.WashingMachineLabel.FontSize = 18;
+            app.WashingMachineLabel.Position = [84 204 154 26];
+            app.WashingMachineLabel.Text = 'Washing Machine';
+
+            % Create DishwasherLabel
+            app.DishwasherLabel = uilabel(app.ActionPlanPanel);
+            app.DishwasherLabel.FontName = 'Artifakt Element';
+            app.DishwasherLabel.FontSize = 18;
+            app.DishwasherLabel.Position = [103 133 104 26];
+            app.DishwasherLabel.Text = 'Dishwasher';
+
+            % Create HandwashingDishesLabel
+            app.HandwashingDishesLabel = uilabel(app.ActionPlanPanel);
+            app.HandwashingDishesLabel.FontName = 'Artifakt Element';
+            app.HandwashingDishesLabel.FontSize = 18;
+            app.HandwashingDishesLabel.Position = [71 61 183 26];
+            app.HandwashingDishesLabel.Text = 'Handwashing Dishes';
+
+            % Create BathLabel
+            app.BathLabel = uilabel(app.ActionPlanPanel);
+            app.BathLabel.FontName = 'Artifakt Element';
+            app.BathLabel.FontSize = 18;
+            app.BathLabel.Position = [139 422 45 26];
+            app.BathLabel.Text = 'Bath';
+
+            % Create RecommendedLabel
+            app.RecommendedLabel = uilabel(app.ActionPlanPanel);
+            app.RecommendedLabel.FontName = 'Artifakt Element';
+            app.RecommendedLabel.FontSize = 16;
+            app.RecommendedLabel.Position = [42 459 120 23];
+            app.RecommendedLabel.Text = 'Recommended:';
+
+            % Create EditField_8
+            app.EditField_8 = uieditfield(app.ActionPlanPanel, 'numeric');
+            app.EditField_8.FontName = 'Artifakt Element';
+            app.EditField_8.FontSize = 16;
+            app.EditField_8.Position = [160 458 22 24];
+
+            % Create MinutesDayLabel
+            app.MinutesDayLabel = uilabel(app.ActionPlanPanel);
+            app.MinutesDayLabel.FontName = 'Artifakt Element';
+            app.MinutesDayLabel.FontSize = 16;
+            app.MinutesDayLabel.Position = [189 459 101 23];
+            app.MinutesDayLabel.Text = 'Minutes/Day';
+
+            % Create RecommendedLabel_2
+            app.RecommendedLabel_2 = uilabel(app.ActionPlanPanel);
+            app.RecommendedLabel_2.FontName = 'Artifakt Element';
+            app.RecommendedLabel_2.FontSize = 16;
+            app.RecommendedLabel_2.Position = [42 387 120 23];
+            app.RecommendedLabel_2.Text = 'Recommended:';
+
+            % Create EditField_9
+            app.EditField_9 = uieditfield(app.ActionPlanPanel, 'numeric');
+            app.EditField_9.FontName = 'Artifakt Element';
+            app.EditField_9.FontSize = 16;
+            app.EditField_9.Position = [160 386 22 24];
+
+            % Create MinutesWeekLabel
+            app.MinutesWeekLabel = uilabel(app.ActionPlanPanel);
+            app.MinutesWeekLabel.FontName = 'Artifakt Element';
+            app.MinutesWeekLabel.FontSize = 16;
+            app.MinutesWeekLabel.Position = [189 387 114 23];
+            app.MinutesWeekLabel.Text = 'Minutes/Week';
+
+            % Create RecommendedLabel_3
+            app.RecommendedLabel_3 = uilabel(app.ActionPlanPanel);
+            app.RecommendedLabel_3.FontName = 'Artifakt Element';
+            app.RecommendedLabel_3.FontSize = 16;
+            app.RecommendedLabel_3.Position = [42 316 120 23];
+            app.RecommendedLabel_3.Text = 'Recommended:';
+
+            % Create EditField_10
+            app.EditField_10 = uieditfield(app.ActionPlanPanel, 'numeric');
+            app.EditField_10.FontName = 'Artifakt Element';
+            app.EditField_10.FontSize = 16;
+            app.EditField_10.Position = [160 315 22 24];
+
+            % Create MinutesDayLabel_2
+            app.MinutesDayLabel_2 = uilabel(app.ActionPlanPanel);
+            app.MinutesDayLabel_2.FontName = 'Artifakt Element';
+            app.MinutesDayLabel_2.FontSize = 16;
+            app.MinutesDayLabel_2.Position = [189 316 101 23];
+            app.MinutesDayLabel_2.Text = 'Minutes/Day';
+
+            % Create RecommendedLabel_4
+            app.RecommendedLabel_4 = uilabel(app.ActionPlanPanel);
+            app.RecommendedLabel_4.FontName = 'Artifakt Element';
+            app.RecommendedLabel_4.FontSize = 16;
+            app.RecommendedLabel_4.Position = [42 245 120 23];
+            app.RecommendedLabel_4.Text = 'Recommended:';
+
+            % Create EditField_11
+            app.EditField_11 = uieditfield(app.ActionPlanPanel, 'numeric');
+            app.EditField_11.FontName = 'Artifakt Element';
+            app.EditField_11.FontSize = 16;
+            app.EditField_11.Position = [160 244 22 24];
+
+            % Create TimesDayLabel
+            app.TimesDayLabel = uilabel(app.ActionPlanPanel);
+            app.TimesDayLabel.FontName = 'Artifakt Element';
+            app.TimesDayLabel.FontSize = 16;
+            app.TimesDayLabel.Position = [189 245 84 23];
+            app.TimesDayLabel.Text = 'Times/Day';
+
+            % Create RecommendedLabel_5
+            app.RecommendedLabel_5 = uilabel(app.ActionPlanPanel);
+            app.RecommendedLabel_5.FontName = 'Artifakt Element';
+            app.RecommendedLabel_5.FontSize = 16;
+            app.RecommendedLabel_5.Position = [42 170 120 23];
+            app.RecommendedLabel_5.Text = 'Recommended:';
+
+            % Create EditField_12
+            app.EditField_12 = uieditfield(app.ActionPlanPanel, 'numeric');
+            app.EditField_12.FontName = 'Artifakt Element';
+            app.EditField_12.FontSize = 16;
+            app.EditField_12.Position = [160 169 22 24];
+
+            % Create MinutesDayLabel_3
+            app.MinutesDayLabel_3 = uilabel(app.ActionPlanPanel);
+            app.MinutesDayLabel_3.FontName = 'Artifakt Element';
+            app.MinutesDayLabel_3.FontSize = 16;
+            app.MinutesDayLabel_3.Position = [189 170 101 23];
+            app.MinutesDayLabel_3.Text = 'Minutes/Day';
+
+            % Create RecommendedLabel_6
+            app.RecommendedLabel_6 = uilabel(app.ActionPlanPanel);
+            app.RecommendedLabel_6.FontName = 'Artifakt Element';
+            app.RecommendedLabel_6.FontSize = 16;
+            app.RecommendedLabel_6.Position = [42 98 120 23];
+            app.RecommendedLabel_6.Text = 'Recommended:';
+
+            % Create EditField_13
+            app.EditField_13 = uieditfield(app.ActionPlanPanel, 'numeric');
+            app.EditField_13.FontName = 'Artifakt Element';
+            app.EditField_13.FontSize = 16;
+            app.EditField_13.Position = [160 97 22 24];
+
+            % Create MinutesDayLabel_4
+            app.MinutesDayLabel_4 = uilabel(app.ActionPlanPanel);
+            app.MinutesDayLabel_4.FontName = 'Artifakt Element';
+            app.MinutesDayLabel_4.FontSize = 16;
+            app.MinutesDayLabel_4.Position = [189 98 101 23];
+            app.MinutesDayLabel_4.Text = 'Minutes/Day';
+
+            % Create RecommendedLabel_7
+            app.RecommendedLabel_7 = uilabel(app.ActionPlanPanel);
+            app.RecommendedLabel_7.FontName = 'Artifakt Element';
+            app.RecommendedLabel_7.FontSize = 16;
+            app.RecommendedLabel_7.Position = [42 25 120 23];
+            app.RecommendedLabel_7.Text = 'Recommended:';
+
+            % Create EditField_14
+            app.EditField_14 = uieditfield(app.ActionPlanPanel, 'numeric');
+            app.EditField_14.FontName = 'Artifakt Element';
+            app.EditField_14.FontSize = 16;
+            app.EditField_14.Position = [160 24 22 24];
+
+            % Create MinutesDayLabel_5
+            app.MinutesDayLabel_5 = uilabel(app.ActionPlanPanel);
+            app.MinutesDayLabel_5.FontName = 'Artifakt Element';
+            app.MinutesDayLabel_5.FontSize = 16;
+            app.MinutesDayLabel_5.Position = [189 25 101 23];
+            app.MinutesDayLabel_5.Text = 'Minutes/Day';
+
+            % Create Image8
+            app.Image8 = uiimage(app.UIFigure);
+            app.Image8.Position = [948 544 300 100];
+            app.Image8.ImageSource = 'imageedit_2_9934020895.png';
+
+            % Create ActionPlanLabel
+            app.ActionPlanLabel = uilabel(app.UIFigure);
+            app.ActionPlanLabel.HorizontalAlignment = 'center';
+            app.ActionPlanLabel.FontName = 'Artifakt Element Medium';
+            app.ActionPlanLabel.FontSize = 20;
+            app.ActionPlanLabel.FontWeight = 'bold';
+            app.ActionPlanLabel.Position = [1036 578 131 31];
+            app.ActionPlanLabel.Text = 'Action Plan';
+
+            % Create Panel
+            app.Panel = uipanel(app.UIFigure);
+            app.Panel.TitlePosition = 'centertop';
+            app.Panel.BackgroundColor = [0.851 0.851 0.851];
+            app.Panel.FontName = 'Franklin Gothic Book';
+            app.Panel.FontSize = 18;
+            app.Panel.Position = [443 62 478 243];
+
+            % Create ShowerCheckBox
+            app.ShowerCheckBox = uicheckbox(app.Panel);
+            app.ShowerCheckBox.Text = 'Shower';
+            app.ShowerCheckBox.FontName = 'Franklin Gothic Book';
+            app.ShowerCheckBox.FontSize = 16;
+            app.ShowerCheckBox.Position = [55 96 77 44];
+
+            % Create BathCheckBox
+            app.BathCheckBox = uicheckbox(app.Panel);
+            app.BathCheckBox.Text = 'Bath';
+            app.BathCheckBox.FontName = 'Franklin Gothic Book';
+            app.BathCheckBox.FontSize = 16;
+            app.BathCheckBox.Position = [166 107 54 22];
+
+            % Create HygieneCheckBox_2
+            app.HygieneCheckBox_2 = uicheckbox(app.Panel);
+            app.HygieneCheckBox_2.Text = 'Hygiene';
+            app.HygieneCheckBox_2.FontName = 'Franklin Gothic Book';
+            app.HygieneCheckBox_2.FontSize = 16;
+            app.HygieneCheckBox_2.Position = [249 107 76 22];
+
+            % Create FlushingCheckBox
+            app.FlushingCheckBox = uicheckbox(app.Panel);
+            app.FlushingCheckBox.Text = 'Flushing';
+            app.FlushingCheckBox.FontName = 'Franklin Gothic Book';
+            app.FlushingCheckBox.FontSize = 16;
+            app.FlushingCheckBox.Position = [360 92 79 48];
+
+            % Create WashingMachineCheckBox_2
+            app.WashingMachineCheckBox_2 = uicheckbox(app.Panel);
+            app.WashingMachineCheckBox_2.Text = 'Washing Machine';
+            app.WashingMachineCheckBox_2.FontName = 'Franklin Gothic Book';
+            app.WashingMachineCheckBox_2.FontSize = 16;
+            app.WashingMachineCheckBox_2.Position = [18 63 141 22];
+
+            % Create DishwasherCheckBox_2
+            app.DishwasherCheckBox_2 = uicheckbox(app.Panel);
+            app.DishwasherCheckBox_2.Text = 'Dishwasher';
+            app.DishwasherCheckBox_2.FontName = 'Franklin Gothic Book';
+            app.DishwasherCheckBox_2.FontSize = 16;
+            app.DishwasherCheckBox_2.Position = [369 63 101 22];
+
+            % Create HandwashingDishesCheckBox
+            app.HandwashingDishesCheckBox = uicheckbox(app.Panel);
+            app.HandwashingDishesCheckBox.Text = 'Handwashing Dishes';
+            app.HandwashingDishesCheckBox.FontName = 'Franklin Gothic Book';
+            app.HandwashingDishesCheckBox.FontSize = 16;
+            app.HandwashingDishesCheckBox.Position = [182 63 163 22];
+
+            % Create reduceWaterUseLabel
+            app.reduceWaterUseLabel = uilabel(app.Panel);
+            app.reduceWaterUseLabel.FontName = 'Franklin Gothic Book';
+            app.reduceWaterUseLabel.FontSize = 18;
+            app.reduceWaterUseLabel.Position = [56 194 269 25];
+            app.reduceWaterUseLabel.Text = 'I want to reduce my water usage by';
+
+            % Create percentField
+            app.percentField = uieditfield(app.Panel, 'numeric');
+            app.percentField.FontName = 'Franklin Gothic Book';
+            app.percentField.FontSize = 18;
+            app.percentField.Position = [330 194 31 22.5725631713867];
+
+            % Create PercentLabel
+            app.PercentLabel = uilabel(app.Panel);
+            app.PercentLabel.FontName = 'Franklin Gothic Book';
+            app.PercentLabel.FontSize = 18;
+            app.PercentLabel.Position = [373 194 25 23];
+            app.PercentLabel.Text = '%';
+
+            % Create IwilldothisbycuttingdownonLabel
+            app.IwilldothisbycuttingdownonLabel = uilabel(app.Panel);
+            app.IwilldothisbycuttingdownonLabel.FontName = 'Franklin Gothic Book';
+            app.IwilldothisbycuttingdownonLabel.FontSize = 18;
+            app.IwilldothisbycuttingdownonLabel.Position = [102 152 248 23];
+            app.IwilldothisbycuttingdownonLabel.Text = 'I will do this by cutting down on:';
+
+            % Create CreatemyactionplanButton
+            app.CreatemyactionplanButton = uibutton(app.Panel, 'push');
+            app.CreatemyactionplanButton.ButtonPushedFcn = createCallbackFcn(app, @WhenPressed, true);
+            app.CreatemyactionplanButton.FontName = 'Franklin Gothic Book';
+            app.CreatemyactionplanButton.FontSize = 20;
+            app.CreatemyactionplanButton.FontWeight = 'bold';
+            app.CreatemyactionplanButton.Position = [133 18 212 32];
+            app.CreatemyactionplanButton.Text = 'Create my action plan';
+
+            % Create Image8_2
+            app.Image8_2 = uiimage(app.UIFigure);
+            app.Image8_2.Position = [522 315 300 105];
+            app.Image8_2.ImageSource = 'imageedit_2_9934020895.png';
+
+            % Create GoalSettingLabel
+            app.GoalSettingLabel = uilabel(app.UIFigure);
+            app.GoalSettingLabel.HorizontalAlignment = 'center';
+            app.GoalSettingLabel.FontName = 'Artifakt Element Medium';
+            app.GoalSettingLabel.FontSize = 20;
+            app.GoalSettingLabel.FontWeight = 'bold';
+            app.GoalSettingLabel.Position = [596 345 152 31];
+            app.GoalSettingLabel.Text = 'Goal Setting';
+
+            % Create EditField_15Label
+            app.EditField_15Label = uilabel(app.UIFigure);
+            app.EditField_15Label.HorizontalAlignment = 'right';
+            app.EditField_15Label.Visible = 'off';
+            app.EditField_15Label.Position = [13 81 56 22];
+            app.EditField_15Label.Text = 'Edit Field';
+
+            % Create EditField_15
+            app.EditField_15 = uieditfield(app.UIFigure, 'numeric');
+            app.EditField_15.ValueChangedFcn = createCallbackFcn(app, @Totals, true);
+            app.EditField_15.Visible = 'off';
+            app.EditField_15.Position = [84 81 100 22];
+
+            % Show the figure after all components are created
+            app.UIFigure.Visible = 'on';
+        end
+    end
+
+    % App creation and deletion
+    methods (Access = public)
+
+        % Construct app
+        function app = app2
+
+            % Create UIFigure and components
+            createComponents(app)
+
+            % Register the app with App Designer
+            registerApp(app, app.UIFigure)
+
+            if nargout == 0
+                clear app
+            end
+        end
+
+        % Code that executes before app deletion
+        function delete(app)
+
+            % Delete UIFigure when app is deleted
+            delete(app.UIFigure)
+        end
+    end
+end
